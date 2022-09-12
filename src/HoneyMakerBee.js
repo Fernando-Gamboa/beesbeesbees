@@ -15,6 +15,10 @@ var HoneyMakerBee = function() {
 // Set the Prototype and Constructor -----
 // this sets up the prototype relationship between the Subclass instantiation and the original Class (Grub/Bee).
 HoneyMakerBee.prototype = Object.create(Bee.prototype);
+
+// ^ This destroys the default HoneyMakerBee.prototype.constructor
+// So we need to recreate it...
+
 // since the previous line overwrote our prototype constructor, we must setup our Subclass relationship to its Constructor prototype object.
 HoneyMakerBee.prototype.constructor = HoneyMakerBee;
 

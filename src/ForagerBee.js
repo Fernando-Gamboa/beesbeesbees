@@ -14,6 +14,10 @@ var ForagerBee = function() {
 // Set the Prototype and Constructor -----
 // this sets up the prototype relationship between the Subclass instantiation and the original Class (Grub/Bee).
 ForagerBee.prototype = Object.create(Bee.prototype);
+
+// ^ This destroys the default ForagerBee.prototype.constructor
+// So we need to recreate it...
+
 // since the previous line overwrote our prototype constructor, we must setup our Subclass relationship to its Constructor prototype object.
 ForagerBee.prototype.constructor = ForagerBee;
 
